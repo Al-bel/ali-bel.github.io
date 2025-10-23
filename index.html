@@ -1,59 +1,72 @@
-
-<html>
-
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<meta http-equiv="Content-Language" content="fr">
-<title>I'AM A MAN</title>
-<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
-<meta name="ProgId" content="FrontPage.Editor.Document">
-<script language="JavaScript" fptype="dynamicanimation">
-<!--
-function dynAnimation() {}
-function clickSwapImg() {}
-//-->
-</script>
-<script language="JavaScript1.2" fptype="dynamicanimation" src="animate.js">
-</script>
-<meta name="Microsoft Theme" content="nature 010, default">
-<meta name="Microsoft Border" content="tl, default"
-  <link rel="stylesheet" href="lunar-style.css">>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hélène & Ali - Accueil</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
+    <!-- Fond étoilé animé -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Hélène & Ali</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="voyages.html">Voyages</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<body onload="dynAnimation()">
-<p align="center"><font size="6"><strong><img src="_derived/index.htm_cmp_nature010_bnr.gif" width="600" height="60" border="0" alt="page d'accueil Hélène &amp; Ali"></strong></font><br>
-<script language="JavaScript"><!--
-MSFPhover = 
-  (((navigator.appName == "Netscape") && 
-  (parseInt(navigator.appVersion) >= 3 )) || 
-  ((navigator.appName == "Microsoft Internet Explorer") && 
-  (parseInt(navigator.appVersion) >= 4 ))); 
-function MSFPpreload(img) 
-{
-  var a=new Image(); a.src=img; return a; 
-}
-// --></script><script language="JavaScript"><!--
-if(MSFPhover) { MSFPnav1n=MSFPpreload("_derived/home_cmp_nature010_hbtn_p.gif"); MSFPnav1h=MSFPpreload("_derived/home_cmp_nature010_hbtn_a.gif"); }
-// --></script><a href="index.htm" language="JavaScript" onmouseover="if(MSFPhover) document['MSFPnav1'].src=MSFPnav1h.src" onmouseout="if(MSFPhover) document['MSFPnav1'].src=MSFPnav1n.src"><img src="_derived/home_cmp_nature010_hbtn_p.gif" width="140" height="60" border="0" alt="Accueil" align="middle" name="MSFPnav1"></a> <script language="JavaScript"><!--
-if(MSFPhover) { MSFPnav2n=MSFPpreload("_derived/ACCUEIL.htm_cmp_nature010_hbtn.gif"); MSFPnav2h=MSFPpreload("_derived/ACCUEIL.htm_cmp_nature010_hbtn_a.gif"); }
-// --></script><a href="ACCUEIL.htm" language="JavaScript" onmouseover="if(MSFPhover) document['MSFPnav2'].src=MSFPnav2h.src" onmouseout="if(MSFPhover) document['MSFPnav2'].src=MSFPnav2n.src"><img src="_derived/ACCUEIL.htm_cmp_nature010_hbtn.gif" width="140" height="60" border="0" alt="NEWS" align="middle" name="MSFPnav2"></a> <script language="JavaScript"><!--
-if(MSFPhover) { MSFPnav3n=MSFPpreload("_derived/ALBUMS_PHOTO.htm_cmp_nature010_hbtn.gif"); MSFPnav3h=MSFPpreload("_derived/ALBUMS_PHOTO.htm_cmp_nature010_hbtn_a.gif"); }
-// --></script><a href="ALBUMS_PHOTO.htm" language="JavaScript" onmouseover="if(MSFPhover) document['MSFPnav3'].src=MSFPnav3h.src" onmouseout="if(MSFPhover) document['MSFPnav3'].src=MSFPnav3n.src"><img src="_derived/ALBUMS_PHOTO.htm_cmp_nature010_hbtn.gif" width="140" height="60" border="0" alt="ALBUMS PHOTO" align="middle" name="MSFPnav3"></a> <script language="JavaScript"><!--
-if(MSFPhover) { MSFPnav4n=MSFPpreload("_derived/FORUM.htm_cmp_nature010_hbtn.gif"); MSFPnav4h=MSFPpreload("_derived/FORUM.htm_cmp_nature010_hbtn_a.gif"); }
-// --></script><a href="FORUM.htm" language="JavaScript" onmouseover="if(MSFPhover) document['MSFPnav4'].src=MSFPnav4h.src" onmouseout="if(MSFPhover) document['MSFPnav4'].src=MSFPnav4n.src"><img src="_derived/FORUM.htm_cmp_nature010_hbtn.gif" width="140" height="60" border="0" alt="FORUM" align="middle" name="MSFPnav4"></a></p>
-<p align="center">&nbsp;</p>
+    <!-- Contenu principal -->
+    <main class="container">
+        <section class="hero">
+            <h2 class="title-glow">Bienvenue sur notre site</h2>
+            <p class="subtitle">Découvrez nos aventures à travers le monde</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🌍</div>
+                    <h3>Voyages</h3>
+                    <p>Explorez nos destinations favorites : Namibie, Algérie et bien plus...</p>
+                    <a href="voyages.html" class="btn">Découvrir</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">📸</div>
+                    <h3>Galerie Photos</h3>
+                    <p>Une collection de moments capturés lors de nos aventures</p>
+                    <a href="photos.html" class="btn">Voir les photos</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">✨</div>
+                    <h3>Notre Histoire</h3>
+                    <p>Apprenez-en plus sur nous et notre passion pour les voyages</p>
+                    <a href="apropos.html" class="btn">En savoir plus</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">📧</div>
+                    <h3>Contact</h3>
+                    <p>Envie de partager vos expériences ? Contactez-nous !</p>
+                    <a href="contact.html" class="btn">Nous écrire</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<!--mstheme--></font></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td valign="top" width="1%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
-<p>&nbsp; </p>
-<!--mstheme--></font></td><td valign="top" width="24"></td><!--msnavigation--><td valign="top"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
-<p align="center">&nbsp;</p>
-<p align="center"><map name="FPMap3">
-<area href="http://WWW.seine&amp;marne.fr" shape="rect" coords="158, 244, 223, 260"></map><a onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln" href="javascript:void(0)"><img border="0" src="index.1.gif" width="286" height="350" usemap="#FPMap3" id="fpAnimswapImgFP1" name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="chiffre_7.gif">
-</a>
-</p>
-<p align="center" dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="text-decoration: blink; text-transform: uppercase; color: #0000FF; font-weight: bold" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2">
-<a href="mailto:ali.belhout@free.fr">
-<marquee behavior="alternate" bgcolor="#00FF00" width="536" height="19">ali.belhout@free.fr</marquee>
-</a><!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></table></body>
-
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Hélène & Ali - Tous droits réservés</p>
+    </footer>
+</body>
 </html>
