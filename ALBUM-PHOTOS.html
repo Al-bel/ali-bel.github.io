@@ -23,6 +23,30 @@
             margin: 0 auto;
         }
         
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+        
+        .back-button:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .back-button:active {
+            transform: scale(0.98);
+        }
+        
         h1 {
             text-align: center;
             color: white;
@@ -67,19 +91,20 @@
 </head>
 <body>
     <div class="container">
+        <a href="index.html" class="back-button">← Retour à la page principale</a>
         <h1>📸 Album Photos</h1>
         <div class="gallery">
             <div class="gallery-item">
-                <img src="/ali-bel.github.io/ALBUM-PHOTOS/20200731_133259.jpg" alt="Photo 1">
+                <img src="" alt="Photo 1">
             </div>
             <div class="gallery-item">
-                <img src="/ali-bel.github.io/ALBUM-PHOTOS/20200731_133853.jpg" alt="Photo 2">
+                <img src="" alt="Photo 2">
             </div>
             <div class="gallery-item">
-                <img src="/ali-bel.github.io/ALBUM-PHOTOS/20200731_133922.jpg" alt="Photo 3">
+                <img src="" alt="Photo 3">
             </div>
             <div class="gallery-item">
-                <img src="/ali-bel.github.io/ALBUM-PHOTOS/20200731_140903.jpg" alt="Photo 4">
+                <img src="" alt="Photo 4">
             </div>
         </div>
     </div>
