@@ -1,181 +1,286 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>ALBUM-PHOTOS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background: linear-gradient(135deg, #8e2de2, #4a00e0);
-      color: #fff;
-      font-family: Arial, sans-serif;
-      margin: 0;
-    }
-    h1 {
-      text-align: center;
-      margin-top: 24px;
-      margin-bottom: 8px;
-    }
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 22px;
-      padding: 30px 4vw 40px 4vw;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-    .photo-card {
-      border-radius: 13px;
-      overflow: hidden;
-      background: #222;
-      box-shadow: 0 2px 24px #200b5372;
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-    }
-    .photo-card:hover {
-      transform: scale(1.06);
-      box-shadow: 0 8px 45px #170054ad;
-      z-index: 2;
-    }
-    .photo-card img {
-      width: 100%;
-      display: block;
-      height: 210px;
-      object-fit: cover;
-      transition: filter 0.2s;
-      filter: brightness(0.98) contrast(1.12);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Photos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .caption {
-      padding: 8px;
-      font-size: 0.95em;
-      text-align: center;
-      background: #17005473;
-      min-height: 38px;
-    }
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 20;
-      left: 0; top: 0; width: 100vw; height: 100vh;
-      background: rgba(12,7,32,0.82);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      position: relative;
-      background: #19105b;
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 0 32px 4px #000;
-      animation: pop .18s ease;
-      max-width: 90vw;
-      max-height: 89vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .modal-content img {
-      max-width: 85vw;
-      max-height: 72vh;
-      border-radius: 9px;
-      margin-bottom: 8px;
-    }
-    .modal-caption {
-      color: #ffe;
-      font-size: 1.1em;
-      text-align: center;
-    }
-    .close-modal {
-      position: absolute;
-      top: 8px;
-      right: 14px;
-      font-size: 2rem;
-      color: #fff;
-      background: none;
-      border: none;
-      cursor: pointer;
-      opacity: 0.85;
-      transition: opacity 0.1s;
-    }
-    .close-modal:hover {
-      opacity: 1;
-    }
-    @keyframes pop { 0% {transform: scale(0.90);} 100% {transform: scale(1);} }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-    footer {
-      text-align: center;
-      padding: 22px;
-      font-size: 1em;
-      color: #eee;
-      background: #190737a9;
-      margin-top: 35px;
-      border-top: 1px solid #3e1f5e38;
-    }
-    @media (max-width: 520px) {
-      .photo-grid { padding: 15px 2vw; gap: 13px; }
-      .photo-card img { height: 130px; }
-      .caption { font-size: 0.93em;}
-    }
-  </style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            background: white;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-info {
+            padding: 15px;
+            background: white;
+        }
+
+        .gallery-item-info p {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #ccc;
+        }
+
+        .loading {
+            text-align: center;
+            color: white;
+            padding: 40px;
+            font-size: 1.2em;
+        }
+
+        .error {
+            text-align: center;
+            color: #ff6b6b;
+            padding: 40px;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>ALBUM PHOTOS</h1>
-  <div class="photo-grid">
-    <div class="photo-card" onclick="openModal('20200731_133259.jpg','Photo du 31/07/2020 13:32')">
-      <img src="https://al-bel.github.io/ALBUM-PHOTOS/20200731_133259.jpg" alt="Photo 20200731_133259" loading="lazy">
-      <div class="caption">Photo du 31/07/2020 13:32</div>
+    <div class="container">
+        <h1>Album Photos</h1>
+        <div class="gallery" id="gallery">
+            <div class="loading">Chargement des photos...</div>
+        </div>
     </div>
-    <div class="photo-card" onclick="openModal('20200731_133853.jpg','Photo du 31/07/2020 13:38')">
-      <img src="https://al-bel.github.io/ALBUM-PHOTOS/20200731_133853.jpg" alt="Photo 20200731_133853" loading="lazy">
-      <div class="caption">Photo du 31/07/2020 13:38</div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Full size image">
+        </div>
     </div>
-    <div class="photo-card" onclick="openModal('20200731_133922.jpg','Photo du 31/07/2020 13:39')">
-      <img src="https://al-bel.github.io/ALBUM-PHOTOS/20200731_133922.jpg" alt="Photo 20200731_133922" loading="lazy">
-      <div class="caption">Photo du 31/07/2020 13:39</div>
-    </div>
-    <div class="photo-card" onclick="openModal('20200731_140903.jpg','Photo du 31/07/2020 14:09')">
-      <img src="https://al-bel.github.io/ALBUM-PHOTOS/20200731_140903.jpg" alt="Photo 20200731_140903" loading="lazy">
-      <div class="caption">Photo du 31/07/2020 14:09</div>
-    </div>
-    <div class="photo-card" onclick="openModal('22au28-09.GIF','Animation du 22-28 septembre')">
-      <img src="https://al-bel.github.io/ALBUM-PHOTOS/22au28-09.GIF" alt="Animation 22au28-09" loading="lazy">
-      <div class="caption">Animation du 22-28 septembre</div>
-    </div>
-    <div class="photo-card" onclick="openModal('290510.GIF','Animation du 29/05/2010')">
-      <img src="https://al-bel.github.io/ALBUM-PHOTOS/290510.GIF" alt="Animation 290510" loading="lazy">
-      <div class="caption">Animation du 29/05/2010</div>
-    </div>
-  </div>
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <button class="close-modal" onclick="closeModal()" aria-label="Fermer">&times;</button>
-      <img id="modal-img" src="" alt="">
-      <div class="modal-caption" id="modal-caption"></div>
-    </div>
-  </div>
-  <footer>
-    &copy; 2025 Mon Album Photos | Créé avec ❤️ et GitHub Pages
-  </footer>
-  <script>
-    function openModal(name, caption) {
-      document.getElementById('modal-img').src = "https://al-bel.github.io/ALBUM-PHOTOS/" + name;
-      document.getElementById('modal-caption').textContent = caption;
-      document.getElementById('modal').style.display = "flex";
-      document.body.style.overflow = "hidden";
-    }
-    function closeModal() {
-      document.getElementById('modal').style.display = "none";
-      document.getElementById('modal-img').src = "";
-      document.body.style.overflow = "";
-    }
-    document.getElementById('modal').addEventListener('click', function(e){
-      if(e.target === this) closeModal();
-    });
-    document.addEventListener('keydown', function(e){
-      if(e.key === "Escape") closeModal();
-    });
-  </script>
+
+    <script>
+        const ALBUM_FOLDER = 'ALBUM-PHOTOS';
+        const gallery = document.getElementById('gallery');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+
+        const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.bmp'];
+
+        async function loadPhotos() {
+            try {
+                const response = await fetch(`${ALBUM_FOLDER}/`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'text/html'
+                    }
+                });
+
+                if (response.ok) {
+                    const html = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const links = doc.querySelectorAll('a');
+                    const images = [];
+
+                    links.forEach(link => {
+                        const href = link.getAttribute('href');
+                        if (href && imageExtensions.some(ext => href.toLowerCase().endsWith(ext))) {
+                            images.push(href);
+                        }
+                    });
+
+                    if (images.length > 0) {
+                        displayPhotos(images);
+                    } else {
+                        showNoPhotos();
+                    }
+                } else {
+                    showNoPhotos();
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                loadFallbackPhotos();
+            }
+        }
+
+        function loadFallbackPhotos() {
+            const commonNames = [
+                'photo1.jpg', 'photo2.jpg', 'photo3.jpg', 'photo4.jpg', 'photo5.jpg',
+                'image1.jpg', 'image2.jpg', 'image3.jpg',
+                '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg',
+                'photo1.png', 'photo2.png', 'photo3.png'
+            ];
+
+            const images = commonNames.map(name => `${ALBUM_FOLDER}/${name}`);
+            loadPhotosWithVerification(images);
+        }
+
+        async function loadPhotosWithVerification(imagePaths) {
+            const validImages = [];
+
+            for (const path of imagePaths) {
+                try {
+                    const response = await fetch(path, { method: 'HEAD' });
+                    if (response.ok) {
+                        validImages.push(path);
+                    }
+                } catch (error) {
+                    // Ignorer les erreurs
+                }
+            }
+
+            if (validImages.length > 0) {
+                displayPhotos(validImages);
+            } else {
+                showNoPhotos();
+            }
+        }
+
+        function displayPhotos(imagePaths) {
+            gallery.innerHTML = '';
+
+            imagePaths.forEach((imagePath, index) => {
+                const fileName = imagePath.split('/').pop();
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.innerHTML = `
+                    <img src="${imagePath}" alt="Photo ${index + 1}" loading="lazy" onclick="openModal('${imagePath}')">
+                    <div class="gallery-item-info">
+                        <p>${fileName}</p>
+                    </div>
+                `;
+                gallery.appendChild(item);
+            });
+        }
+
+        function showNoPhotos() {
+            gallery.innerHTML = '<div class="error">Aucune photo trouvee dans le dossier ALBUM-PHOTOS</div>';
+        }
+
+        function openModal(imagePath) {
+            modalImage.src = imagePath;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        window.addEventListener('load', loadPhotos);
+    </script>
 </body>
 </html>
