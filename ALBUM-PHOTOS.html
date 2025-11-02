@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ALBUM-PHOTOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(135deg, #8e2de2, #4a00e0);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      padding: 30px 4vw 40px 4vw;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .photo-card {
+      border-radius: 13px;
+      overflow: hidden;
+      background: #222;
+      box-shadow: 0 2px 24px #200b5372;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .photo-card:hover {
+      transform: scale(1.06);
+      box-shadow: 0 8px 45px #170054ad;
+      z-index: 2;
+    }
+    .photo-card img {
+      width: 100%;
+      display: block;
+      height: 210px;
+      object-fit: cover;
+      transition: filter 0.2s;
+      filter: brightness(0.98) contrast(1.12);
+    }
 
+    .caption {
+      padding: 8px;
+      font-size: 0.95em;
+      text-align: center;
+      background: #17005473;
+      min-height: 38px;
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 20;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(12,7,32,0.82);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      position: relative;
+      background: #19105b;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 0 32px 4px #000;
+      animation: pop .18s ease;
+      max-width: 90vw;
+      max-height: 89vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .modal-content img {
+      max-width: 85vw;
+      max-height: 72vh;
+      border-radius: 9px;
+      margin-bottom: 8px;
+    }
+    .modal-caption {
+      color: #ffe;
+      font-size: 1.1em;
+      text-align: center;
+    }
+    .close-modal {
+      position: absolute;
+      top: 8px;
+      right: 14px;
+      font-size: 2rem;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      opacity: 0.85;
+      transition: opacity 0.1s;
+    }
+    .close-modal:hover {
+      opacity: 1;
+    }
+    @keyframes pop { 0% {transform: scale(0.90);} 100% {transform: scale(1);} }
+
+    footer {
+      text-align: center;
+      padding: 22px;
+      font-size: 1em;
+      color: #eee;
+      background: #190737a9;
+      margin-top: 35px;
+      border-top: 1px solid #3e1f5e38;
+    }
+    @media (max-width: 520px) {
+      .photo-grid { padding: 15px 2vw; gap: 13px; }
+      .photo-card img { height: 130px; }
+      .caption { font-size: 0.93em;}
+    }
+  </style>
+</head>
+<body>
+  <h1>ALBUM PHOTOS</h1>
+  <div class="photo-grid">
+    <div class="photo-card" onclick="openModal('20200731_133259.jpg','Photo du 31/07/2020 13:32')">
+      <img src="https://al-bel.github.io/ALBUM-PHOTOS/20200731_133259.jpg" alt="Photo 20200731_133259" loading="lazy">
+      <div class="caption">Photo du 31/07/2020 13:32</div>
+    </div>
+    <div class="photo-card" onclick="openModal('20200731_133853.jpg','Photo du 31/07/2020 13:38')">
+      <img src="https://al-bel.github.io/ALBUM-PHOTOS/20200731_133853.jpg" alt="Photo 20200731_133853" loading="lazy">
+      <div class="caption">Photo du 31/07/2020 13:38</div>
+    </div>
+    <div class="photo-card" onclick="openModal('20200731_133922.jpg','Photo du 31/07/2020 13:39')">
+      <img src="https://al-bel.github.io/ALBUM-PHOTOS/20200731_133922.jpg" alt="Photo 20200731_133922" loading="lazy">
+      <div class="caption">Photo du 31/07/2020 13:39</div>
+    </div>
+    <div class="photo-card" onclick="openModal('20200731_140903.jpg','Photo du 31/07/2020 14:09')">
+      <img src="https://al-bel.github.io/ALBUM-PHOTOS/20200731_140903.jpg" alt="Photo 20200731_140903" loading="lazy">
+      <div class="caption">Photo du 31/07/2020 14:09</div>
+    </div>
+    <div class="photo-card" onclick="openModal('22au28-09.GIF','Animation du 22-28 septembre')">
+      <img src="https://al-bel.github.io/ALBUM-PHOTOS/22au28-09.GIF" alt="Animation 22au28-09" loading="lazy">
+      <div class="caption">Animation du 22-28 septembre</div>
+    </div>
+    <div class="photo-card" onclick="openModal('290510.GIF','Animation du 29/05/2010')">
+      <img src="https://al-bel.github.io/ALBUM-PHOTOS/290510.GIF" alt="Animation 290510" loading="lazy">
+      <div class="caption">Animation du 29/05/2010</div>
+    </div>
+  </div>
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeModal()" aria-label="Fermer">&times;</button>
+      <img id="modal-img" src="" alt="">
+      <div class="modal-caption" id="modal-caption"></div>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 Mon Album Photos | Créé avec ❤️ et GitHub Pages
+  </footer>
+  <script>
+    function openModal(name, caption) {
+      document.getElementById('modal-img').src = "https://al-bel.github.io/ALBUM-PHOTOS/" + name;
+      document.getElementById('modal-caption').textContent = caption;
+      document.getElementById('modal').style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = "none";
+      document.getElementById('modal-img').src = "";
+      document.body.style.overflow = "";
+    }
+    document.getElementById('modal').addEventListener('click', function(e){
+      if(e.target === this) closeModal();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === "Escape") closeModal();
+    });
+  </script>
+</body>
+</html>
