@@ -5,6 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Voyages - Ali</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles additionnels pour les tuiles de voyage */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #b8c5d6;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .card-section-title {
+            font-size: 1.8em;
+            color: #ffffff;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+        }
+
+        .card-section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 30px 15px;
+            }
+
+            .card {
+                min-height: auto;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="stars"></div>
@@ -24,31 +120,235 @@
 
     <main class="container">
         <h1 class="title-glow">Mes Voyages</h1>
-        <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem; color: #b8c5d6;">Découvrez les destinations que j'ai explorées</p>
+        <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem; color: #b8c5d6;">Découvrez les destinations que j'ai explorées et mes rêves de voyages futurs</p>
         
+        <!-- DESTINATIONS PASSÉES -->
+        <h2 class="card-section-title">🌍 Destinations Explorées</h2>
         <div class="cards-grid">
+            <!-- Namibie -->
             <div class="card">
-                <h3>🐘 Namibie</h3>
-                <p>Un voyage inoubliable à travers les déserts, les dunes rouges et la faune sauvage de Namibie. Des paysages à couper le souffle et des rencontres extraordinaires.</p>
-                <a href="NAMIBIA" class="btn">Découvrir</a>
+                <div>
+                    <h3>🐘 Namibie</h3>
+                    <p>Un voyage inoubliable à travers les déserts, les dunes rouges et la faune sauvage de Namibie. Des paysages à couper le souffle et des rencontres extraordinaires.</p>
+                </div>
+                <a href="destinations/namibie.html" class="btn">Découvrir</a>
             </div>
 
+            <!-- Algérie -->
             <div class="card">
-                <h3>🇩🇿 Algérie</h3>
-                <p>Retour aux sources dans notre belle Algérie. Entre histoire, culture et traditions, chaque visite est une redécouverte de mes racines.</p>
-                <a href="ALGERIA" class="btn">Explorer</a>
+                <div>
+                    <h3>🇩🇿 Algérie</h3>
+                    <p>Retour aux sources dans notre belle Algérie. Entre histoire, culture et traditions, chaque visite est une redécouverte de mes racines.</p>
+                </div>
+                <a href="destinations/algerie.html" class="btn">Explorer</a>
             </div>
 
+            <!-- Maroc -->
             <div class="card">
-                <h3>🌍 Prochaines Destinations</h3>
-                <p>Mes rêves de voyages futurs : Maroc, Tunisie, Égypte... Le monde est vaste et l'aventure ne fait que commencer!</p>
-                <span class="btn" style="opacity: 0.5; cursor: not-allowed;">Bientôt</span>
+                <div>
+                    <h3>🇲🇦 Maroc</h3>
+                    <p>Les médinas colorées, les souks animés, et les paysages désertiques du Maroc. Une immersion dans la culture nord-africaine authentique.</p>
+                </div>
+                <a href="destinations/maroc.html" class="btn">Découvrir</a>
+            </div>
+
+            <!-- USA -->
+            <div class="card">
+                <div>
+                    <h3>🇺🇸 USA</h3>
+                    <p>De la côte Est à la côte Ouest, une exploration des grands espaces américains, des villes dynamiques et des paysages grandioses.</p>
+                </div>
+                <a href="destinations/usa.html" class="btn">Explorer</a>
+            </div>
+
+            <!-- Oman -->
+            <div class="card">
+                <div>
+                    <h3>🇴🇲 Oman</h3>
+                    <p>Les fjords de Musandam, les plages de sable blanc et l'hospitalité chaleureuse du peuple omanais. Un joyau du Moyen-Orient.</p>
+                </div>
+                <a href="destinations/oman.html" class="btn">Découvrir</a>
+            </div>
+
+            <!-- Espagne -->
+            <div class="card">
+                <div>
+                    <h3>🇪🇸 Espagne</h3>
+                    <p>L'architecture fascinante, la gastronomie délicieuse et la passion espagnole. De Barcelone à Séville, un voyage inoubliable.</p>
+                </div>
+                <a href="destinations/espagne.html" class="btn">Explorer</a>
+            </div>
+
+            <!-- Portugal -->
+            <div class="card">
+                <div>
+                    <h3>🇵🇹 Portugal</h3>
+                    <p>Les azulejos colorés, les vins fins et les côtes pittoresques du Portugal. Une destination authentique et chaleureuse.</p>
+                </div>
+                <a href="destinations/portugal.html" class="btn">Découvrir</a>
+            </div>
+
+            <!-- Italie -->
+            <div class="card">
+                <div>
+                    <h3>🇮🇹 Italie</h3>
+                    <p>L'art, l'histoire et la dolce vita. De Rome à Venise, une immersion dans la beauté et la culture italienne.</p>
+                </div>
+                <a href="destinations/italie.html" class="btn">Explorer</a>
+            </div>
+
+            <!-- Croatie -->
+            <div class="card">
+                <div>
+                    <h3>🇭🇷 Croatie</h3>
+                    <p>Les côtes adriatiques spectaculaires, Dubrovnik et les îles paradisiaques. Un trésor caché de l'Europe méditerranéenne.</p>
+                </div>
+                <a href="destinations/croatie.html" class="btn">Découvrir</a>
+            </div>
+
+            <!-- Cap Vert -->
+            <div class="card">
+                <div>
+                    <h3>🇨🇻 Cap Vert</h3>
+                    <p>Les îles volcaniques, les plages de sable noir et la musique vibrante du Cap Vert. Un paradis tropical africain.</p>
+                </div>
+                <a href="destinations/capvert.html" class="btn">Explorer</a>
+            </div>
+
+            <!-- Madère -->
+            <div class="card">
+                <div>
+                    <h3>🏝️ Madère</h3>
+                    <p>L'île fleur du Portugal, avec ses paysages verdoyants, ses falaises spectaculaires et son climat subtropical.</p>
+                </div>
+                <a href="destinations/madere.html" class="btn">Découvrir</a>
+            </div>
+
+            <!-- Afrique Australe -->
+            <div class="card">
+                <div>
+                    <h3>🦁 Afrique Australe</h3>
+                    <p>Les safaris époustouflants, les chutes Victoria et la richesse de la faune africaine. Une aventure inoubliable.</p>
+                </div>
+                <a href="destinations/afriqueaustrale.html" class="btn">Explorer</a>
+            </div>
+
+            <!-- Islande -->
+            <div class="card">
+                <div>
+                    <h3>🇮🇸 Islande</h3>
+                    <p>Les aurores boréales, les geysers, les cascades et les paysages lunaires. Un pays de contraste et de beauté brute.</p>
+                </div>
+                <a href="destinations/islande.html" class="btn">Découvrir</a>
+            </div>
+
+            <!-- Angleterre -->
+            <div class="card">
+                <div>
+                    <h3>🇬🇧 Angleterre</h3>
+                    <p>Londres, les Cotswolds et la campagne anglaise. Une plongée dans l'histoire, la culture et la tradition britannique.</p>
+                </div>
+                <a href="destinations/angleterre.html" class="btn">Explorer</a>
+            </div>
+
+            <!-- Irlande -->
+            <div class="card">
+                <div>
+                    <h3>🇮🇪 Irlande</h3>
+                    <p>Les falaises de Moher, les pubs authentiques et la magie des paysages irlandais. Une terre de légendes et de beauté.</p>
+                </div>
+                <a href="destinations/irlande.html" class="btn">Découvrir</a>
+            </div>
+
+            <!-- Japon -->
+            <div class="card">
+                <div>
+                    <h3>🇯🇵 Japon</h3>
+                    <p>Les temples anciens, les villes modernes et la culture fascinante du Japon. Un contraste captivant entre tradition et modernité.</p>
+                </div>
+                <a href="destinations/japon.html" class="btn">Explorer</a>
+            </div>
+        </div>
+
+        <!-- PROCHAINES DESTINATIONS -->
+        <h2 class="card-section-title">✈️ Prochaines Destinations</h2>
+        <div class="cards-grid">
+            <!-- Chine -->
+            <div class="card">
+                <div>
+                    <h3>🇨🇳 Chine</h3>
+                    <p>La Grande Muraille, les temples bouddhistes et la richesse culturelle millénaire. Une destination incontournable pour les voyageurs curieux.</p>
+                </div>
+                <a href="destinations/chine.html" class="btn">À venir</a>
+            </div>
+
+            <!-- Tamanrasset -->
+            <div class="card">
+                <div>
+                    <h3>🏜️ Tamanrasset</h3>
+                    <p>Au cœur du Sahara, une expérience authentique du désert algérien. Les montagnes du Hoggar et la culture touareg.</p>
+                </div>
+                <a href="destinations/tamanrasset.html" class="btn">À venir</a>
+            </div>
+
+            <!-- Vietnam -->
+            <div class="card">
+                <div>
+                    <h3>🇻🇳 Vietnam</h3>
+                    <p>La baie d'Halong, les rues animées de Hanoï et la cuisine délicieuse. Un pays en pleine transformation.</p>
+                </div>
+                <a href="destinations/vietnam.html" class="btn">À venir</a>
+            </div>
+
+            <!-- Thaïlande -->
+            <div class="card">
+                <div>
+                    <h3>🇹🇭 Thaïlande</h3>
+                    <p>Les temples dorés, les plages paradisiaques et la chaleur de l'hospitalité thaïlandaise. Le pays du sourire.</p>
+                </div>
+                <a href="destinations/thailande.html" class="btn">À venir</a>
+            </div>
+
+            <!-- Cambodge -->
+            <div class="card">
+                <div>
+                    <h3>🇰🇭 Cambodge</h3>
+                    <p>Angkor Wat et les temples anciens du Cambodge. Une plongée dans l'histoire et l'archéologie de l'Asie du Sud-Est.</p>
+                </div>
+                <a href="destinations/cambodge.html" class="btn">À venir</a>
+            </div>
+
+            <!-- Birmanie -->
+            <div class="card">
+                <div>
+                    <h3>🇲🇲 Birmanie</h3>
+                    <p>Les pagodes dorées, le lac Inle et les montagnes de Shan. Un pays mystérieux et fascinant.</p>
+                </div>
+                <a href="destinations/birmanie.html" class="btn">À venir</a>
+            </div>
+
+            <!-- Malaisie -->
+            <div class="card">
+                <div>
+                    <h3>🇲🇾 Malaisie</h3>
+                    <p>Kuala Lumpur, les îles de Borneo et la jungle tropicale. Un mélange de modernité et de nature.</p>
+                </div>
+                <a href="destinations/malaisie.html" class="btn">À venir</a>
+            </div>
+
+            <!-- Pakistan -->
+            <div class="card">
+                <div>
+                    <h3>🇵🇰 Pakistan</h3>
+                    <p>L'Himalaya, la vallée de Hunza et les routes de montagne spectaculaires. Une destination pour les aventuriers.</p>
+                </div>
+                <a href="destinations/pakistan.html" class="btn">À venir</a>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Ali - Tous droits réservés</p>
+        <p>&copy; 2026 Ali - Tous droits réservés</p>
     </footer>
 </body>
 </html>
