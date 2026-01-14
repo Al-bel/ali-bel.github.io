@@ -98,6 +98,32 @@ body {
     transform: translateY(-2px);
 }
 
+/* === MENU ENHANCEMENTS === */
+.nav-menu a::before {
+ content: '';
+ position: absolute;
+ bottom: -2px;
+ left: 0;
+ width: 0;
+ height: 2px;
+ background: linear-gradient(90deg, #64b5f6, #90caf9);
+ transition: width 0.4s ease;
+}
+
+.nav-menu li {
+ position: relative;
+}
+
+.nav-menu a:hover::before,
+.nav-menu a.active::before {
+ width: 100%;
+}
+
+.nav-menu a:hover {
+ background: rgba(100, 181, 246, 0.15);
+ box-shadow: 0 0 20px rgba(144, 202, 249, 0.6);
+}
+
 /* === CONTAINER PRINCIPAL === */
 .container {
     max-width: 1200px;
