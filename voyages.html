@@ -36,6 +36,12 @@
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
         }
 
+        .card.active {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+}
+
         .card h3 {
             font-size: 1.5em;
             color: #ffffff;
@@ -101,6 +107,24 @@
             }
         }
     </style>
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+      card.addEventListener('click', function(e) {
+        // Si on clique sur le bouton, ne pas ajouter la classe active à la tuile
+        if (e.target.tagName === 'A') return;
+        
+        // Retirer la classe active de toutes les tuiles
+        cards.forEach(c => c.classList.remove('active'));
+        
+        // Ajouter la classe active à la tuile cliquée
+        this.classList.add('active');
+      });
+    });
+  });
+</script>
 </head>
 <body>
     <div class="stars"></div>
