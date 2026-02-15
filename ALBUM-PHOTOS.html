@@ -402,23 +402,23 @@
             <!-- Fullscreen Carousel -->
             <div class="carousel">
                 <div class="carousel-inner" id="carousel-inner">
-                    <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/AB.jpeg" alt="Portrait" loading="eager">
+                                    <div class="carousel-item">
+                        <img src="./ALBUM-PHOTOS/005.jpg" alt="Photo 1" loading="eager">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/20210528_141241.jpg" alt="Nounours tire la langue" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/006.jpg" alt="Photo 2" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/20220102_172007.jpg" alt="Caddy" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/20210528_141241.jpg" alt="Photo 3" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/IMG-20210713-WA0007.jpg" alt="Nounours" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/20220102_172007.jpg" alt="Photo 4" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/005.jpg" alt="Coucher de soleil côtier" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/AB.jpeg" alt="Photo 5" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/006.jpg" alt="Archéologie et histoire" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/IMG-20210713-WA0007.jpg" alt="Photo 6" loading="lazy">
                     </div>
                 </div>
 
@@ -432,23 +432,23 @@
 
             <!-- Thumbnail Navigation -->
             <div class="thumbnail-nav" id="thumbnail-nav">
-                <div class="thumbnail active" onclick="goToSlide(0)">
-                    <img src="./ALBUM-PHOTOS/AB.jpeg" alt="Miniature 1">
+                            <div class="thumbnail active" onclick="goToSlide(0)">
+                    <img src="./ALBUM-PHOTOS/005.jpg" alt="Miniature 1">
                 </div>
-                <div class="thumbnail" onclick="goToSlide(1)">
-                    <img src="./ALBUM-PHOTOS/20210528_141241.jpg" alt="Miniature 2">
+                <div class="thumbnail " onclick="goToSlide(1)">
+                    <img src="./ALBUM-PHOTOS/006.jpg" alt="Miniature 2">
                 </div>
-                <div class="thumbnail" onclick="goToSlide(2)">
-                    <img src="./ALBUM-PHOTOS/20220102_172007.jpg" alt="Miniature 3">
+                <div class="thumbnail " onclick="goToSlide(2)">
+                    <img src="./ALBUM-PHOTOS/20210528_141241.jpg" alt="Miniature 3">
                 </div>
-                <div class="thumbnail" onclick="goToSlide(3)">
-                    <img src="./ALBUM-PHOTOS/IMG-20210713-WA0007.jpg" alt="Miniature 4">
+                <div class="thumbnail " onclick="goToSlide(3)">
+                    <img src="./ALBUM-PHOTOS/20220102_172007.jpg" alt="Miniature 4">
                 </div>
-                <div class="thumbnail" onclick="goToSlide(4)">
-                    <img src="./ALBUM-PHOTOS/005.jpg" alt="Miniature 5">
+                <div class="thumbnail " onclick="goToSlide(4)">
+                    <img src="./ALBUM-PHOTOS/AB.jpeg" alt="Miniature 5">
                 </div>
-                <div class="thumbnail" onclick="goToSlide(5)">
-                    <img src="./ALBUM-PHOTOS/006.jpg" alt="Miniature 6">
+                <div class="thumbnail " onclick="goToSlide(5)">
+                    <img src="./ALBUM-PHOTOS/IMG-20210713-WA0007.jpg" alt="Miniature 6">
                 </div>
             </div>
         </div>
@@ -502,7 +502,7 @@
         const slides = document.querySelectorAll('.carousel-item');
         const thumbnails = document.querySelectorAll('.thumbnail');
         const imageCounter = document.getElementById('image-counter');
-        const totalSlides = slides.length;
+        const totalSlides = 6;
 
         function updateCarousel() {
             carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
