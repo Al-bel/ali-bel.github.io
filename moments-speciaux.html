@@ -412,28 +412,34 @@
                         <img src="./ALBUM-PHOTOS/20161012_171511.jpg" alt="Photo 3" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/20161012_171513(0).jpg" alt="Photo 4" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/20161012_171513.jpg" alt="Photo 4" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/20161012_171513.jpg" alt="Photo 5" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/20161012_171534.jpg" alt="Photo 5" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/20161012_171534.jpg" alt="Photo 6" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/20161012_171535.jpg" alt="Photo 6" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/20161012_171535.jpg" alt="Photo 7" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/20161012_171549.jpg" alt="Photo 7" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/20161012_171549.jpg" alt="Photo 8" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/20161012_171553.jpg" alt="Photo 8" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/20161012_171553.jpg" alt="Photo 9" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/20161012_171705.jpg" alt="Photo 9" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/20161012_171705.jpg" alt="Photo 10" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/DSC02055.JPG" alt="Photo 10" loading="lazy">
                     </div>
                     <div class="carousel-item">
-                        <img src="./ALBUM-PHOTOS/20161012_171710.jpg" alt="Photo 11" loading="lazy">
+                        <img src="./ALBUM-PHOTOS/DSC02128.JPG" alt="Photo 11" loading="lazy">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./ALBUM-PHOTOS/DSC02130.JPG" alt="Photo 12" loading="lazy">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./ALBUM-PHOTOS/DSC02368.JPG" alt="Photo 13" loading="lazy">
                     </div>
                 </div>
 
@@ -443,7 +449,7 @@
             </div>
 
             <!-- Image Counter -->
-            <div class="image-counter" id="image-counter">1 / 11</div>
+            <div class="image-counter" id="image-counter">1 / 13</div>
 
             <!-- Thumbnail Navigation -->
             <div class="thumbnail-nav" id="thumbnail-nav">
@@ -457,28 +463,34 @@
                     <img src="./ALBUM-PHOTOS/20161012_171511.jpg" alt="Miniature 3">
                 </div>
                 <div class="thumbnail " onclick="goToSlide(3)">
-                    <img src="./ALBUM-PHOTOS/20161012_171513(0).jpg" alt="Miniature 4">
+                    <img src="./ALBUM-PHOTOS/20161012_171513.jpg" alt="Miniature 4">
                 </div>
                 <div class="thumbnail " onclick="goToSlide(4)">
-                    <img src="./ALBUM-PHOTOS/20161012_171513.jpg" alt="Miniature 5">
+                    <img src="./ALBUM-PHOTOS/20161012_171534.jpg" alt="Miniature 5">
                 </div>
                 <div class="thumbnail " onclick="goToSlide(5)">
-                    <img src="./ALBUM-PHOTOS/20161012_171534.jpg" alt="Miniature 6">
+                    <img src="./ALBUM-PHOTOS/20161012_171535.jpg" alt="Miniature 6">
                 </div>
                 <div class="thumbnail " onclick="goToSlide(6)">
-                    <img src="./ALBUM-PHOTOS/20161012_171535.jpg" alt="Miniature 7">
+                    <img src="./ALBUM-PHOTOS/20161012_171549.jpg" alt="Miniature 7">
                 </div>
                 <div class="thumbnail " onclick="goToSlide(7)">
-                    <img src="./ALBUM-PHOTOS/20161012_171549.jpg" alt="Miniature 8">
+                    <img src="./ALBUM-PHOTOS/20161012_171553.jpg" alt="Miniature 8">
                 </div>
                 <div class="thumbnail " onclick="goToSlide(8)">
-                    <img src="./ALBUM-PHOTOS/20161012_171553.jpg" alt="Miniature 9">
+                    <img src="./ALBUM-PHOTOS/20161012_171705.jpg" alt="Miniature 9">
                 </div>
                 <div class="thumbnail " onclick="goToSlide(9)">
-                    <img src="./ALBUM-PHOTOS/20161012_171705.jpg" alt="Miniature 10">
+                    <img src="./ALBUM-PHOTOS/DSC02055.JPG" alt="Miniature 10">
                 </div>
                 <div class="thumbnail " onclick="goToSlide(10)">
-                    <img src="./ALBUM-PHOTOS/20161012_171710.jpg" alt="Miniature 11">
+                    <img src="./ALBUM-PHOTOS/DSC02128.JPG" alt="Miniature 11">
+                </div>
+                <div class="thumbnail " onclick="goToSlide(11)">
+                    <img src="./ALBUM-PHOTOS/DSC02130.JPG" alt="Miniature 12">
+                </div>
+                <div class="thumbnail " onclick="goToSlide(12)">
+                    <img src="./ALBUM-PHOTOS/DSC02368.JPG" alt="Miniature 13">
                 </div>
             </div>
         </div>
@@ -532,7 +544,7 @@
         const slides = document.querySelectorAll('.carousel-item');
         const thumbnails = document.querySelectorAll('.thumbnail');
         const imageCounter = document.getElementById('image-counter');
-        const totalSlides = 11;
+        const totalSlides = 13;
 
         function updateCarousel() {
             carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
